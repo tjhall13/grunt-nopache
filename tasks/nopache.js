@@ -15,7 +15,7 @@ module.exports = function(grunt) {
   // Please see the Grunt documentation for more information regarding task
   // creation: http://gruntjs.com/creating-tasks
 
-  grunt.registerMultiTask('nopache', 'Grunt nopache task.', function() {
+  grunt.registerMultiTask('nopache', 'Nopache webserver task.', function() {
     var done = this.async();
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
