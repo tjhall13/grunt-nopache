@@ -45,7 +45,7 @@ The path used for the base of the nopache server.
 
 #### options.port
 Type: `Integer`
-Default value: `10000`
+Default value: `2400`
 
 A Integer used for the port the server will listen on.
 

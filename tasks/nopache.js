@@ -8,28 +8,24 @@
 
 'use strict';
 
-var Nopache = require('nopache').nopache;
+var NopacheServer = require('nopache').NopacheServer;
 
 module.exports = function(grunt) {
-    
-  // Please see the Grunt documentation for more information regarding task
-  // creation: http://gruntjs.com/creating-tasks
+    grunt.registerMultiTask('nopache', 'Nopache web server task.', function() {
+        var done = this.async();
+        
+        // Merge task-specific and/or target-specific options with these defaults.
+        var options = this.options({
+            port: 2400,
+            base: '.',
+            keepAlive: false
+        });
 
-  grunt.registerMultiTask('nopache', 'Nopache webserver task.', function() {
-    var done = this.async();
-    // Merge task-specific and/or target-specific options with these defaults.
-    var options = this.options({
-      port: 10000,
-      base: '.',
-      keepAlive: false
+        var server = new NopacheServer(options.base, options.port);
+        server.listen();
+
+        if(!options.keepAlive) {
+            done();
+        }
     });
-    
-    var server = new Nopache(options.base, options.port);
-    
-    server.listen();
-    
-    if(!options.keepAlive) {
-        done();
-    }
-  });
 };

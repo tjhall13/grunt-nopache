@@ -37,7 +37,7 @@ module.exports = function(grunt) {
       custom_options: {
         options: {
           base: '~/GVInnovations/Givingest/GivingestAdmin/html',
-          port: 2400,
+          port: 10000,
           keepAlive: true
         }
       }
