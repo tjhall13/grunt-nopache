@@ -30,16 +30,7 @@ module.exports = function(grunt) {
 
     // Configuration to be run (and then tested).
     nopache: {
-      default_options: {
-        options: {
-        }
-      },
-      custom_options: {
-        options: {
-          base: '~/GVInnovations/Givingest/GivingestAdmin/html',
-          port: 10000,
-          keepAlive: true
-        }
+      default: {
       }
     },
 

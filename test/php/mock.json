@@ -1,0 +1,9 @@
+{
+    "/file.php": {
+        "type": "text",
+        "headers": {
+            "Content-Type": "text/html"
+        },
+        "data": "<html><body>hello world</body></html>"
+    }
+}
