@@ -21,7 +21,7 @@ module.exports = function(grunt) {
             port: 2400,
             base: '.',
             keepAlive: false,
-            php: false
+            php: null
         });
         
         var fromFile = false;

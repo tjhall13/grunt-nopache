@@ -49,6 +49,18 @@ Default value: `2400`
 
 A Integer used for the port the server will listen on.
 
+#### options.keepAlive
+Type: `Boolean`
+Default value: `false`
+
+Sets whether the server should run in the background.  If running as a web server the suggested value is `true`.
+
+#### options.php
+Type: `Object` or `String`
+Default value: `null`
+
+If a string is provided, grunt will try to resolve it as a filename and use the file to import an object via `require`.  In either case, the object is passed to nopache to mock php files.  See [nopache](http://www.npmjs.com/packages/nopache) for details.
+
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
