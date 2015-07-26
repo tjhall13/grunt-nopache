@@ -1,7 +1,7 @@
 {
   "name": "grunt-nopache",
   "description": "Grunt nopache task.",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "homepage": "https://github.com/tjhall13/grunt-nopache",
   "author": {
     "name": "Trevor Hall",
@@ -18,11 +18,8 @@
   "engines": {
     "node": ">= 0.8.0"
   },
-  "scripts": {
-    "test": "grunt test"
-  },
   "dependencies": {
-    "nopache": "^0.1.0"
+    "nopache": "^0.1.2"
   },
   "devDependencies": {
     "grunt-contrib-jshint": "^0.9.2",
