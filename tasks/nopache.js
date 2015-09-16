@@ -21,34 +21,10 @@ module.exports = function(grunt) {
             port: 2400,
             base: '.',
             keepAlive: false,
-            php: null
+            mods: null
         });
         
-        var fromFile = false;
-        
-        if(options.php) {
-            if(typeof options.php === 'string') {
-                try {
-                    if(options.php.charAt(0) === '~') {
-                        options.php = path.join(process.env.HOME || process.env.HOMEPATH, options.php.substr(1));
-                    }
-                    var filename = path.resolve(options.php);
-                    options.php = require(filename);
-                    fromFile = true;
-                } catch(e) {
-                    grunt.fail.fatal(e);
-                }
-            }
-            if(typeof options.php !== 'object') {
-                if(fromFile) {
-                    grunt.fail.fatal('Parsed file must export an object');
-                } else {
-                    grunt.fail.fatal('php option must be an object or file exporting an object');
-                }
-            }
-        }
-        
-        var server = new NopacheServer(options.base, options.port, options.php);
+        var server = new NopacheServer(options.base, options.port, options.mods);
         server.listen();
 
         if(!options.keepAlive) {
