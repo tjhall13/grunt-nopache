@@ -1,3 +1,6 @@
-node_modules/
 Gruntfile.js
 test/
+.npm*
+npm*
+.git*
+.jshintrc

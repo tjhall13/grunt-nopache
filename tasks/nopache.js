@@ -18,16 +18,19 @@ module.exports = function(grunt) {
         
         // Merge task-specific and/or target-specific options with these defaults.
         var options = this.options({
-            port: 2400,
             base: '.',
+            port: 2400,
             keepAlive: false,
-            mods: null
+            mods: { }
         });
+        var mods = options.mods;
+        delete options['mods'];
         
-        var server = new NopacheServer(options.base, options.port, options.mods);
+        var server = new NopacheServer(options, mods);
         server.listen();
 
         if(!options.keepAlive) {
+            server.close();
             done();
         }
     });
